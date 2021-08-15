@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>显示：{{msg}}</p>
+        <input type="text" @keyup.enter="display" @keyup.esc="clear">
+        <!-- <button @click>click</button> -->
+        <p>--------------------</p>
+        <p>----------{{m1}}----------</p>
+        <select v-model="province">
+            <option value="">请选择：</option>
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">广州</option>
+        </select>
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '',
+                m1: '',
+                province: '3'
+            },
+            methods: {
+                display(e) {
+                    const content = e.target.value;
+                    this.msg = content
+                    console.log(content);
+                },
+                clear(e) {
+                    e.target.value = ''
+                        // const val = e.target.value
+                        // this.msg = val
+                    this.msg = ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

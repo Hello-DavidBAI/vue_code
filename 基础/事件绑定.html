@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        
+        .ipt_msg1 {
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <h1>{{msg}}</h1>
+        <h1 v-text="msg"></h1>
+        <h1 v-html="msg"></h1>
+        <h1 class="ipt_msg1" v-html="msg1"></h1>
+        <input class="ipt" type="text" v-model="msg1" @keyup.enter="fn1()">
+
+        <input type="text" @keydown.delete="fn2"><br>
+        <h2>keyCode</h2>
+        <input type="text" @keydown="fn3">
+    </div>
+
+    <script src="js/vue.js">
+    </script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '这是一个vue msg',
+                msg1: '   ',
+                msg2: 'keyCode'
+            },
+            methods: {
+                fn1: function() {
+                    alert('it`s ok.')
+                },
+                fn2: function() {
+                    console.log('del sth.');
+                },
+                fn3: function(e) {
+                    console.log(e.keyCode);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

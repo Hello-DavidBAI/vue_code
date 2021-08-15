@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="number" v-model=a> +
+        <input type="number" v-model=b>
+        <input type="button" value="计算" @click="add">
+        <p>计算结果：{{c}}</p>
+        ------------------------------------
+        <a :href=url>biblibili</a>
+        <input type="button" value="toggle" @click="f1">
+    </div>
+
+
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                a: '',
+                b: '',
+                c: '',
+                url: 'https://www.bilibili.com/?spm_id_from=333.999.b_696e7465726e6174696f6e616c486561646572.1'
+            },
+            methods: {
+                add: function() {
+                    console.log('666');
+                    this.c = parseInt(this.a) + parseInt(this.b);
+                },
+                f1: function() {
+                    this.url = 'https://github.com/'
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

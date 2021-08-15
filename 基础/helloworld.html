@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div>{{msg}}</div>
+        <div v-text="msg1"></div>
+        <div v-html="msg2" @click="handle(2,3,$event)"></div>
+        <div v-pre>{{msg2}}</div>
+        <H1 @click='handle1'>{{msg3}}</H1>
+        <input type="text" placeholder="请输入：" v-model="msg3">
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello world',
+                msg1: '9999999',
+                msg2: '<h1>这是vue</h1>',
+                msg3: '请输入'
+            },
+            methods: {
+                handle: function(a, b, e) {
+                    // alert(a, b)
+                    console.log(a, b);
+                    // console.log(e.target.tagName);
+                    console.log(e.target.innerHTML);
+                },
+                handle1: function(e) {
+                    console.log(e.target.innerHTML);
+                }
+            }
+
+        })
+    </script>
+
+</body>
+
+</html>

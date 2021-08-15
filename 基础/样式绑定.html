@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        
+        .c1 {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .c2 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <h1>{{msg}}</h1>
+        <!-- <div class="c1" :clss="active:isActive"></div> -->
+        <!-- <div class="c1"></div> -->
+        <div :class="{c1:isTrue}"></div>
+        <button @click="fn1">toggle</button>
+        <div :class="[c1,c2]"></div>
+        <button @click="fn2">toggle</button>
+        <div :style="{border:b1,width:w1,height:h1}"></div>
+        <div :style="[boxStyle]"></div>
+
+    </div>
+
+    <script src="js/vue.js">
+    </script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '这是一个vue msg',
+                isTrue: true,
+                isTrue2: true,
+                c1: 'c1',
+                c2: 'c2',
+                b1: '1px dotted #ccc',
+                w1: '20px',
+                h1: '20px',
+                boxStyle: {
+                    width: "50px",
+                    height: '50px',
+                    backgroundColor: 'red'
+                }
+
+            },
+            methods: {
+                fn1: function() {
+                    // isTrue = !isTrue;
+                    this.isTrue = !this.isTrue
+                },
+                fn2: function() {
+                    // isTrue = !isTrue;
+                    this.c2 = ''
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

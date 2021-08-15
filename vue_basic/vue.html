@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>555{{msg}}</h3>
+        <h3 v-text="msg">666</h3>
+        <h3 v-html="msg">777</h3>
+        <h3 v-html="age">888</h3>
+        <p>--------------------</p>
+        <p>{{msg1}}</p>
+        <p v-text="msg1"></p>
+        <p v-html="msg1"></p>
+
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello',
+                msg1: '<h3>早上好。</h3>',
+                age: 23
+            }
+        })
+    </script>
+</body>
+
+</html>
