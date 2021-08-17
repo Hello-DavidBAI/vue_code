@@ -1,0 +1,10 @@
+:root {
+    font-size: 12px;
+}
+
+
+/* fullcheck圆角 */
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 1.25rem;
+}

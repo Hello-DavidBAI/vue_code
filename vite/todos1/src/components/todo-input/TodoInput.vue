@@ -1,7 +1,7 @@
 <template>
     <form class="form-inline" @submit.prevent="onFormSubmit">
         <div class="input-group mb-2 mr-sm-2">
-          <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="请输入Task" v-model.trim="taskname">
+          <input type="text" class="form-control" placeholder="请输入Task" v-model.trim="taskname">
         </div>
         <button type="submit" class="btn btn-primary mb-2">创建新Task</button>
 </form>
